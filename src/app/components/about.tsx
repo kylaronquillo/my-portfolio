@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
-
+import CV from './downloadcv';
 const AboutSection: React.FC = () => {
   return (
     <section id="about" className="about flex flex-col md:flex-row max-w-7xl pt-20 space-y-10 md:space-y-0 md:space-x-40 font-mono content-center">
@@ -74,9 +74,7 @@ const AboutSection: React.FC = () => {
           <button className="learn-more mt-10 bg-[#6EA0BA] text-white py-2 px-4 rounded-lg drop-shadow-xl hover:bg-white hover:text-[#6EA0BA] hover:border-[#6EA0BA] border-2 transition-all">
             <a href="mailto:kylasbronquillo@gmail.com">Leave a message</a>
           </button>
-          <button className="dl-cv mt-10 bg-[#6EA0BA] text-white py-2 px-4 rounded-lg drop-shadow-xl hover:bg-white hover:text-[#6EA0BA] hover:border-[#6EA0BA] border-2 transition-all">
-            Download CV
-          </button>
+          <CV />
         </div>
       </div>
 

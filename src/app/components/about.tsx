@@ -47,7 +47,7 @@ const AboutSection: React.FC = () => {
             rel="noopener noreferrer"
           >
             <Image
-              src="/icons/Linkedin.png"
+              src="/icons/LinkedIn.png"
               alt="LinkedIn"
               width={50}
               height={50}

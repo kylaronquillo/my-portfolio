@@ -23,7 +23,7 @@ const Contact = () => {
         </a>
         <a href="https://www.linkedin.com/in/kylaronquillo/" target="_blank" rel="noopener noreferrer">
           <Image 
-            src="/icons/Linkedin.png" 
+            src="/icons/LinkedIn.png" 
             alt="LinkedIn" 
             width={50} 
             height={50} 

@@ -90,7 +90,7 @@ const ProjectSection = () => {
         <ProjectTag onClick={handleTagChange} tag="Machine Learning" isSelected={tag === "Machine Learning"} />
         <ProjectTag onClick={handleTagChange} tag="UI/UX" isSelected={tag === "UI/UX"} />
       </div>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <div className="grid md:grid-cols-3 gap-8 md:gap-12 content-center">
         {projectData
           .filter((project) => tag === "All" || project.category === tag)
           .map((project, index) => (

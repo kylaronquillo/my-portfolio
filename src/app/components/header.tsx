@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Header = () => {
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
         e.preventDefault();

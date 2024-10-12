@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Typewriter from 'typewriter-effect';
 import Projects from './components/projectsection';// Adjust the path as needed
 import Contact from './components/contact';
 import Header from './components/header';

@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import ProjectCard from './projectcards'; // Adjust the import as needed
-import Notification from './notificationerror';
+import Notification from './notificationerror'; // Adjust the import as needed
 
-const ProjectTag = ({ tag, onClick, isSelected }) => {
+// Define the props interface for ProjectTag
+interface ProjectTagProps {
+  tag: string;
+  onClick: (tag: string) => void;
+  isSelected: boolean;
+}
+
+const ProjectTag: React.FC<ProjectTagProps> = ({ tag, onClick, isSelected }) => {
   return (
     <button
       className={`px-4 py-2 m-2 rounded-md ${isSelected ? 'bg-[#6EA0BA] text-white' : 'bg-gray-200 text-gray-800'}`}
@@ -19,8 +26,8 @@ const projectData = [
     title: "PRITS",
     description: "PRITS is a medical charting app designed to help ease the workload of our Filipino nurses, was a true team effort by O'lanz Studio.",
     skills: [
-      { name: "Agile" },
-      { name: "Research" }
+      { name: "Agile", url: "https://www.agilemethodology.org" },
+      { name: "Research", url: "https://www.researchgate.net" }
     ],
     gitUrl: "https://github.com/MaxineNicole2127/prits",
     previewUrl: "",
@@ -29,10 +36,10 @@ const projectData = [
   {
     imgUrl: "/images/project-imgs/MerchTrack-app.png",
     title: "MerchTrack",
-    description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling",
+    description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
     skills: [
-      { name: "React" },
-      { name: "Tailwind" }
+      { name: "React", url: "https://reactjs.org" },
+      { name: "Tailwind", url: "https://tailwindcss.com" }
     ],
     gitUrl: "https://github.com/gab-cat/merch-track-client",
     previewUrl: "https://merchtrack.tech/",
@@ -41,10 +48,10 @@ const projectData = [
   {
     imgUrl: "/images/project-imgs/Maharlika-app.jpg",
     title: "Maharlika",
-    description: "Maharlika is a 2.5D RTS game about a datu on a journey from Borneo to the Philippine, managing resources, and shaping a thriving community.",
+    description: "Maharlika is a 2.5D RTS game about a datu on a journey from Borneo to the Philippines, managing resources, and shaping a thriving community.",
     skills: [
-      { name: "Unreal Engine" },
-      { name: "Jira" }
+      { name: "Unreal Engine", url: "https://www.unrealengine.com" },
+      { name: "Jira", url: "https://www.atlassian.com/software/jira" }
     ],
     gitUrl: "",
     previewUrl: "",
@@ -55,7 +62,7 @@ const projectData = [
     title: "Project SMILE",
     description: "Redesigning the Project SMILE website to improve user experience, update content, and enhance visual appeal.",
     skills: [
-      { name: "Figma" },
+      { name: "Figma", url: "https://www.figma.com" },
     ],
     gitUrl: "https://www.figma.com/design/aMugVSaMthWDCiwMqEvqlB/Project-SMILE-Redesign?node-id=0-1&t=SOKqkXRwhvMXsztD-1",
     previewUrl: "https://www.figma.com/proto/aMugVSaMthWDCiwMqEvqlB/Project-SMILE-Redesign?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&t=nlOqFmDX20Wu8Ig9-1",
@@ -64,15 +71,15 @@ const projectData = [
 ];
 
 // ProjectSection component
-const ProjectSection = () => {
+const ProjectSection: React.FC = () => {
   const [tag, setTag] = useState("All");
   const [notification, setNotification] = useState("");
 
-  const handleTagChange = (newTag) => {
+  const handleTagChange = (newTag: string) => {
     setTag(newTag);
   };
 
-  const handleNotify = (message) => {
+  const handleNotify = (message: string) => {
     setNotification(message);
     setTimeout(() => {
       setNotification(""); 

@@ -3,21 +3,38 @@ import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
 
-const ProjectCard = ({ imgUrl, title, description, skills, gitUrl, previewUrl, onNotify }) => {
-  const getDescriptionTextSize = (descriptionLength) => {
+// Skill interface definition
+interface Skill {
+  name: string;
+  url: string;
+}
+
+// ProjectCardProps interface definition
+interface ProjectCardProps {
+  imgUrl: string;
+  title: string;
+  description: string;
+  skills: Skill[]; // Skills must have both name and url
+  gitUrl: string;
+  previewUrl: string;
+  onNotify: (message: string) => void;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ imgUrl, title, description, skills, gitUrl, previewUrl, onNotify }) => {
+  const getDescriptionTextSize = (descriptionLength: number) => {
     if (descriptionLength <= 50) return "text-base"; // Short description
     if (descriptionLength <= 100) return "text-sm";  // Medium description
     return "text-xs";  // Long description
   };
 
-  const handleGitClick = (e) => {
+  const handleGitClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!gitUrl) {
       e.preventDefault();
       onNotify("There is no project repository.");
     }
   };
 
-  const handlePreviewClick = (e) => {
+  const handlePreviewClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!previewUrl) {
       e.preventDefault();
       onNotify("There is no app preview.");
@@ -27,20 +44,20 @@ const ProjectCard = ({ imgUrl, title, description, skills, gitUrl, previewUrl, o
   return (
     <div className="w-80 rounded-lg overflow-hidden shadow-lg bg-white m-4 hover:scale-110 transition-transform relative group">
       <div className="relative">
-      {imgUrl ? (
-        <Image
-          className="object-cover"
-          src={imgUrl}
-          alt={title}
-          width={640} // Set a fixed width
-          height={160} // Set a fixed height
-          style={{ width: '100%', height: '10rem' }} // Full width and fixed height (10rem corresponds to h-40)
-        />
-      ) : (
-        <div className="w-full h-40 flex items-center justify-center bg-gray-200">
-          <p className="text-gray-500">No Image Available</p>
-        </div>
-      )}
+        {imgUrl ? (
+          <Image
+            className="object-cover"
+            src={imgUrl}
+            alt={title}
+            width={640} // Set a fixed width
+            height={160} // Set a fixed height
+            style={{ width: '100%', height: '10rem' }} // Full width and fixed height (10rem corresponds to h-40)
+          />
+        ) : (
+          <div className="w-full h-40 flex items-center justify-center bg-gray-200">
+            <p className="text-gray-500">No Image Available</p>
+          </div>
+        )}
 
         <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
           <Link

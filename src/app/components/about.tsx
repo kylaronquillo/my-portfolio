@@ -55,7 +55,7 @@ const AboutSection: React.FC = () => {
             />
           </a>
           <a
-            href="https://medium.com/@your-medium-profile"
+            href="https://medium.com/@kylasbronquillo"
             target="_blank"
             rel="noopener noreferrer"
           >

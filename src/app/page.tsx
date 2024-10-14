@@ -4,7 +4,6 @@ import Projects from './components/projectsection';// Adjust the path as needed
 import Contact from './components/contact';
 import Header from './components/header';
 import About from './components/about';
-import Head from 'next/head';
 
 export default function Home() {
   return (

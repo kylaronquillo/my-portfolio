@@ -38,11 +38,23 @@ const projectData = [
     title: "MerchTrack",
     description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
     skills: [
-      { name: "React", url: "https://reactjs.org" },
+      { name: "NextJS", url: "https://nextjs.org" },
       { name: "Tailwind", url: "https://tailwindcss.com" }
     ],
     gitUrl: "https://github.com/gab-cat/merch-track-client",
     previewUrl: "https://merchtrack.tech/",
+    category: "Web"
+  },
+  {
+    imgUrl: "/images/project-imgs/Merchtrack-django-app.png",
+    title: "MerchTrack",
+    description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
+    skills: [
+      { name: "Django", url: "https://www.djangoproject.com" },
+      { name: "UI/UX Design", url: "https://www.figma.com" }
+    ],
+    gitUrl: "https://github.com/gab-cat/merch-track-client",
+    previewUrl: "",
     category: "Web"
   },
   {
@@ -53,7 +65,7 @@ const projectData = [
       { name: "Unreal Engine", url: "https://www.unrealengine.com" },
       { name: "Jira", url: "https://www.atlassian.com/software/jira" }
     ],
-    gitUrl: "",
+    gitUrl: "https://github.com/gab-cat/merch-track",
     previewUrl: "",
     category: "Game Development"
   },

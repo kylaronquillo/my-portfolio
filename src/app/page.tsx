@@ -11,8 +11,7 @@ export default function Home() {
     <>
       <Head>
         <title>Kyla Ronquillo</title>
-        <meta name="description" content="Your description here" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="A portfolio showcasing Kyla Ronquillo's projects." />
       </Head>
       
       <div className="homepage bg-gray-50 min-h-screen flex flex-col items-center">

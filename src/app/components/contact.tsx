@@ -30,7 +30,7 @@ const Contact = () => {
             className="icon cursor-pointer hover:scale-110 transition-transform"
           />
         </a>
-        <a href="https://medium.com/@your-medium-profile" target="_blank" rel="noopener noreferrer">
+        <a href="https://medium.com/@kylasbronquillo" target="_blank" rel="noopener noreferrer">
           <Image 
             src="/icons/Medium.png" 
             alt="Medium" 

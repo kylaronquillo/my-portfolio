@@ -37,6 +37,7 @@ const Header = () => {
                         <a
                             onClick={(e) => handleScroll(e, "blog")}
                             className="text-gray-700 hover:underline decoration-blue-400 hover:scale-110 cursor-pointer"
+                            href="https://medium.com/@kylasbronquillo"
                         >
                             Blog
                         </a>

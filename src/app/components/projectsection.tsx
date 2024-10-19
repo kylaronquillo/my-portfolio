@@ -65,7 +65,7 @@ const projectData = [
       { name: "Unreal Engine", url: "https://www.unrealengine.com" },
       { name: "Jira", url: "https://www.atlassian.com/software/jira" }
     ],
-    gitUrl: "https://github.com/gab-cat/merch-track",
+    gitUrl: "https://gitlab.com/teamc3314927/maharlika",
     previewUrl: "",
     category: "Game Development"
   },

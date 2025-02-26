@@ -6,7 +6,6 @@ import Image from "next/image";
 // Skill interface definition
 interface Skill {
   name: string;
-  url: string;
 }
 
 // ProjectCardProps interface definition
@@ -86,7 +85,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ imgUrl, title, description, s
         {skills.map((skill, index) => (
           <a
             key={index}
-            href={skill.url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-300"

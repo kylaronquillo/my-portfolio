@@ -12,7 +12,7 @@ interface ProjectTagProps {
 const ProjectTag: React.FC<ProjectTagProps> = ({ tag, onClick, isSelected }) => {
   return (
     <button
-      className={`px-4 py-2 m-2 rounded-md ${isSelected ? 'bg-[#6EA0BA] text-white' : 'bg-gray-200 text-gray-800'}`}
+      className={`px-4 py-2 m-2 rounded-md ${isSelected ? 'bg-black text-white' : 'bg-gray-200 text-gray-800'}`}
       onClick={() => onClick(tag)}
     >
       {tag}
@@ -26,44 +26,45 @@ const projectData = [
     title: "PRITS",
     description: "PRITS is a medical charting app designed to help ease the workload of our Filipino nurses, was a true team effort by O'lanz Studio.",
     skills: [
-      { name: "Agile", url: "https://www.agilemethodology.org" },
-      { name: "Research", url: "https://www.researchgate.net" }
+      { name: "Agile"},
+      { name: "Research"},
+      { name: "ClickUp"},
     ],
     gitUrl: "https://github.com/MaxineNicole2127/prits",
     previewUrl: "",
     category: "Project Management"
   },
   {
-    imgUrl: "/images/project-imgs/MerchTrack-app.png",
+    imgUrl: "/images/project-imgs/MerchTrack.png",
     title: "MerchTrack",
     description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
     skills: [
-      { name: "NextJS", url: "https://nextjs.org" },
-      { name: "Tailwind", url: "https://tailwindcss.com" }
+      { name: "NextJS"},
+      { name: "Front-End"},
     ],
-    gitUrl: "https://github.com/gab-cat/merch-track-client",
+    gitUrl: "https://github.com/gab-cat/merchtrack.git",
     previewUrl: "https://merchtrack.tech/",
     category: "Web"
   },
   {
-    imgUrl: "/images/project-imgs/Merchtrack-django-app.png",
+    imgUrl: "/images/project-imgs/MerchTrack.png",
     title: "MerchTrack",
     description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
     skills: [
-      { name: "Django", url: "https://www.djangoproject.com" },
-      { name: "UI/UX Design", url: "https://www.figma.com" }
+      { name: "Figma Design"},
+      { name: "UI/UX"}
     ],
-    gitUrl: "https://github.com/gab-cat/merch-track-client",
+    gitUrl: "https://www.figma.com/design/Z8WqVbn8RrmbfkgpdbpbYe/MerchTrack?node-id=10-6&t=4WyxVyKdDhZzbPrb-1",
     previewUrl: "",
-    category: "Web"
+    category: "UI/UX"
   },
   {
     imgUrl: "/images/project-imgs/Maharlika-app.jpg",
     title: "Maharlika",
     description: "Maharlika is a 2.5D RTS game about a datu on a journey from Borneo to the Philippines, managing resources, and shaping a thriving community.",
     skills: [
-      { name: "Unreal Engine", url: "https://www.unrealengine.com" },
-      { name: "Jira", url: "https://www.atlassian.com/software/jira" }
+      { name: "Unreal Engine"},
+      { name: "Jira"}
     ],
     gitUrl: "https://gitlab.com/teamc3314927/maharlika",
     previewUrl: "",
@@ -74,11 +75,24 @@ const projectData = [
     title: "Project SMILE",
     description: "Redesigning the Project SMILE website to improve user experience, update content, and enhance visual appeal.",
     skills: [
-      { name: "Figma", url: "https://www.figma.com" },
+      { name: "Figma"},
     ],
     gitUrl: "https://www.figma.com/design/aMugVSaMthWDCiwMqEvqlB/Project-SMILE-Redesign?node-id=0-1&t=SOKqkXRwhvMXsztD-1",
-    previewUrl: "https://www.figma.com/proto/aMugVSaMthWDCiwMqEvqlB/Project-SMILE-Redesign?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&t=nlOqFmDX20Wu8Ig9-1",
+    previewUrl: "",
     category: "UI/UX"
+  },
+  {
+    imgUrl: "/images/project-imgs/TapUp.png",
+    title: "TapUp",
+    description: "TapUp is an on-going project I am handling. Information regarding the app is yet to be disclosed.",
+    skills: [
+      { name: "Product Design"},
+      { name: "Kanban"},
+      { name: "ClickUp"},
+    ],
+    gitUrl: "",
+    previewUrl: "https://tapup.tech/",
+    category: "Project Management"
   },
 ];
 
@@ -100,7 +114,7 @@ const ProjectSection: React.FC = () => {
 
   return (
     <section id="projects" className="projects pt-10">
-      <h1 className="text-2xl md:text-4xl font-medium text-[#6EA0BA] mb-6 text-center">/Projects</h1>
+      <h1 className="text-2xl md:text-4xl font-hagrid font-medium text-black mb-6 text-center">/Projects</h1>
       <div className="flex flex-wrap justify-center">
         <ProjectTag onClick={handleTagChange} tag="All" isSelected={tag === "All"} />
         <ProjectTag onClick={handleTagChange} tag="Web" isSelected={tag === "Web"} />
@@ -109,7 +123,7 @@ const ProjectSection: React.FC = () => {
         <ProjectTag onClick={handleTagChange} tag="Machine Learning" isSelected={tag === "Machine Learning"} />
         <ProjectTag onClick={handleTagChange} tag="UI/UX" isSelected={tag === "UI/UX"} />
       </div>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12 content-center">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-center items-center">
         {projectData
           .filter((project) => tag === "All" || project.category === tag)
           .map((project, index) => (

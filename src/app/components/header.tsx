@@ -1,60 +1,81 @@
+"use client"
+
+import type React from "react"
+import { useState, useEffect } from "react"
+
 const Header = () => {
-    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-        e.preventDefault();
-        console.log(`Attempting to scroll to: ${targetId}`);
+  const [activeSection, setActiveSection] = useState("")
 
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-            console.log(`Found element: ${targetElement}`);
-            targetElement.scrollIntoView({ behavior: "smooth" });
-        } else {
-            console.log(`Element not found: ${targetId}`);
-        }
-    };
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" })
+      setActiveSection(targetId)
+    }
+  }
 
-    return (
-        <div className="header w-full bg-gray-50 drop-shadow-sm font-quattrocento fixed top-0 left-0 z-50">
-            <nav className="max-w-6xl mx-auto p-4">
-                <ul className="flex justify-center space-x-12">
-                    <li>
-                        <a
-                            onClick={(e) => handleScroll(e, "about")}
-                            className="text-gray-700 hover:underline decoration-blue-400 hover:scale-110 cursor-pointer"
-                        >
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            onClick={(e) => handleScroll(e, "projects")}
-                            className="text-gray-700 hover:underline decoration-blue-400 hover:scale-110 cursor-pointer"
-                        >
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://medium.com/@kylasbronquillo"
-                            className="text-gray-700 hover:underline decoration-blue-400 hover:scale-110 cursor-pointer"
-                            target="_blank"  // Opens in a new tab
-                            rel="noopener noreferrer"  // Security feature
-                        >
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            onClick={(e) => handleScroll(e, "contact")}
-                            className="text-gray-700 hover:underline decoration-blue-400 hover:scale-110 cursor-pointer"
-                        >
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    );
-};
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
 
-export default Header;
+    document.querySelectorAll("section[id]").forEach((section) => {
+      observer.observe(section)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  const navItems = [
+    { name: "About", id: "about" },
+    { name: "Projects", id: "projects" },
+    { name: "Blog", href: "https://medium.com/@kylasbronquillo" },
+    { name: "Contact", id: "contact" }
+  ]
+
+  return (
+    <header className="fixed w-full top-0 z-50 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <nav className="py-4">
+          <ul className="flex justify-center lg:justify-end space-x-4 lg:space-x-12 flex-wrap text-lg md:text-xl font-hagrid">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className={`transition-colors ${
+                      activeSection === item.id ? "text-black" : "text-gray-600 hover:text-black"
+                    }`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <a
+                    onClick={(e) => item.id && handleScroll(e, item.id)}
+                    className={`transition-colors cursor-pointer ${
+                      activeSection === item.id ? "text-black" : "text-gray-600 hover:text-black"
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+export default Header

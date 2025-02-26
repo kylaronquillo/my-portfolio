@@ -1,10 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Harmattan:wght@400;700&display=swap');
 
 :root {
   --background: #FFFEFA
   --foreground: #6EA0BA
+}
+@font-face {
+  font-family: 'Stinger';
+  src:url('/fonts/stinger/StingerTrial-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stinger-bold';
+  src: url('/fonts/stinger/StingerTrial-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Hagrid";
+  src: url("/fonts/hagrid/Hagrid-Regular-trial.ttf") format("truetype"),
+       url("/fonts/hagrid/Hagrid-Italic-trial.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -22,8 +45,20 @@ body {
   align-content: center;
 }
 
+body {
+  background-color: var(--background);
+  font-family: "Harmattan", sans-serif; /* Change to your preferred font */
+}
+
+p {
+  background-color: var(--background);
+  font-family: "Harmattan", sans-serif; /* Change to your preferred font */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+

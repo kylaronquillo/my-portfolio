@@ -3,8 +3,9 @@ import React from "react";
 const DownloadCVButton = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Curriculum%20Vitae_Kyla%20Ronquillo.pdf"; // Change this to the path of your CV file in the public folder
-    link.download = "Curriculum Vitae_Kyla Ronquillo.pdf"; // Specify the name of the downloaded file
+    link.href = "/Kyla_Ronquillo_CV.pdf"; 
+link.download = "Kyla_Ronquillo_CV.pdf";
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

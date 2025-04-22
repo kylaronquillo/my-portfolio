@@ -17,7 +17,7 @@ const AboutSection: React.FC = () => {
           <h1 className="text-sm md:text-3xl font-regular mb-6 text-gray-500 min-h-[60px]">
             <Typewriter
               options={{
-                strings: ['- Business Analytics', '- Project Management'],
+                strings: ['- Data Analytics', '- Project Management'],
                 autoStart: true,
                 loop: true,
               }}

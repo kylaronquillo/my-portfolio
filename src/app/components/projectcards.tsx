@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ imgUrl, title, description, s
   };
 
   return (
-    <div className="w-80 rounded-lg overflow-hidden shadow-lg bg-white m-4 hover:scale-110 transition-transform relative group">
+    <div className="w-80 flex flex-col self-start rounded-lg overflow-auto shadow-lg bg-white m-4 hover:scale-110 transition-transform relative group">
       <div className="relative">
         {imgUrl ? (
           <Image

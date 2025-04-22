@@ -35,7 +35,7 @@ const projectData = [
     category: "Project Management"
   },
   {
-    imgUrl: "/images/project-imgs/MerchTrack.png",
+    imgUrl: "/images/project-imgs/merchtrack.png",
     title: "MerchTrack",
     description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
     skills: [

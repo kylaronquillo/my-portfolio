@@ -6,10 +6,10 @@ const Contact = () => {
   return (
     <section id="contact" className="py-10">
       <h1 className="text-2xl md:text-4xl font-hagrid font-medium text-black mb-6 text-center">/Contact</h1>
-      <div className="text-center mb-16">
+      {/* <div className="text-center mb-16">
         <p className="text-lg md:text-xl font-mono text-gray-600">Get in touch with me</p>
         <p className="text-lg md:text-xl font-mono font-bold text-gray-600">kylasbronquillo@gmail.com</p>
-      </div>
+      </div> */}
 
       {/* Icons */}
       <div className="my-icons flex justify-center space-x-6 mt-4 mb-20">

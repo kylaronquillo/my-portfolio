@@ -39,7 +39,7 @@ const Contact = () => {
         </a>
       </div>
 
-      <p>© 2024. All rights reserved by Kyla Ronquillo</p>
+      <p>© 2025. All rights reserved by Kyla Ronquillo</p>
     </section>
   );
 };

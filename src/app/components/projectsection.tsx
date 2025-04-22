@@ -24,7 +24,7 @@ const projectData = [
   {
     imgUrl: "/images/project-imgs/PRITS-app.jpg",
     title: "PRITS",
-    description: "PRITS is a medical charting app designed to help ease the workload of our Filipino nurses, was a true team effort by O'lanz Studio.",
+    description: "PRITS is a medical charting app designed to help ease the workload of our Filipino nurses. I led a team of six during AppCon 2024, where I also conducted user research and handled project documentation.",
     skills: [
       { name: "Agile"},
       { name: "Research"},
@@ -37,7 +37,7 @@ const projectData = [
   {
     imgUrl: "/images/project-imgs/merchtrack.png",
     title: "MerchTrack",
-    description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
+    description: "MerchTrack is your solution for efficient merchandise management. I led a team of four into launching this platform for the College of Computer Studies' merchandise ordering last April 2025. Through enhanced user experience, we successfully improved revenue by 18% during the campaign.",
     skills: [
       { name: "Kanban"},
       { name: "User Experience"},
@@ -62,7 +62,7 @@ const projectData = [
   {
     imgUrl: "/images/project-imgs/TapUp.png",
     title: "TapUp",
-    description: "TapUp is an on-going project I am handling. Information regarding the app is yet to be disclosed.",
+    description: "TapUp is a project I led during my internship at Codebility, where I successfully maintained 88% milestone adherence.",
     skills: [
       { name: "Product Design"},
       { name: "Kanban"},
@@ -75,7 +75,7 @@ const projectData = [
   {
     imgUrl: "/images/project-imgs/storymap-image.png",
     title: "Where the Roots Run Deep",
-    description: "This is a storymap project in which geospatial data and mapping were incorporated to tell the story of the Mangrove Forests in Del Gallego. This project required teamwork, presentation, and data analysis.",
+    description: "This is a StoryMap project I worked on during my externship at NGS and TNC, where we incorporated geospatial data and mapping to tell the story of the Mangrove Forests in Del Gallego. The project emphasized teamwork, data analysis, and public presentation.",
     skills: [
       { name: "Data Analysis"},
       { name: "ArcGIS Tools"},
@@ -84,7 +84,7 @@ const projectData = [
     ],
     gitUrl: "",
     previewUrl: "https://storymaps.arcgis.com/stories/b2838d632f6c48f4b457634c93d01217",
-    category: "Data"
+    category: "Data Science"
   },
   {
     imgUrl: "",
@@ -96,12 +96,24 @@ const projectData = [
     ],
     gitUrl: "https://github.com/kylaronquillo/Data-Scientist-in-Python-Datacamp",
     previewUrl: "",
-    category: "Data"
+    category: "Data Science"
+  },
+  {
+    imgUrl: "",
+    title: "Spam Filter using Naive Bayes",
+    description: "This is a mini project we made that filters spam and ham by implementing the logic behind Naive Bayes. This project also implemented the Precision and Recall metric. Check out the paper I made for this project!",
+    skills: [
+      { name: "Python"},
+      { name: "Machine Learning"}
+    ],
+    gitUrl: "https://github.com/kylaronquillo/CSEC302-DataMining/tree/main/Problem%201%20-%20Spam%20Filtering",
+    previewUrl: "https://github.com/kylaronquillo/CSEC302-DataMining/blob/main/Problem%201%20-%20Spam%20Filtering/Spam_Filtering%20Documentation.pdf",
+    category: "Data Science"
   },
   {
     imgUrl: "/images/project-imgs/Maharlika-app.jpg",
     title: "Maharlika",
-    description: "Maharlika is a 2.5D RTS game about a datu on a journey from Borneo to the Philippines, managing resources, and shaping a thriving community.",
+    description: "Maharlika is a 2.5D RTS game we made during our game development camp. It's about a datu on a journey from Borneo to the Philippines, managing resources, and shaping a thriving community.",
     skills: [
       { name: "Unreal Engine"},
       { name: "Jira"}
@@ -135,14 +147,14 @@ const ProjectSection: React.FC = () => {
         <ProjectTag onClick={handleTagChange} tag="All" isSelected={tag === "All"} />
         {/* <ProjectTag onClick={handleTagChange} tag="Web" isSelected={tag === "Web"} /> */}
         <ProjectTag onClick={handleTagChange} tag="Project Management" isSelected={tag === "Project Management"} />
-        <ProjectTag onClick={handleTagChange} tag="Data" isSelected={tag === "Data"} />
+        <ProjectTag onClick={handleTagChange} tag="Data Science" isSelected={tag === "Data Science"} />
         {/* <ProjectTag onClick={handleTagChange} tag="UI/UX" isSelected={tag === "UI/UX"} /> */}
       </div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-center items-center">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-center items-start">
         {projectData
           .filter((project) => tag === "All" || project.category === tag)
           .map((project, index) => (
-            <div className="w-full sm:w-1/2 lg:w-1/4 p-1" key={index}>
+            <div className="card" key={index}>
               <ProjectCard
                 imgUrl={project.imgUrl}
                 title={project.title}

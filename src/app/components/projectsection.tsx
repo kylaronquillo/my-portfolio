@@ -39,48 +39,26 @@ const projectData = [
     title: "MerchTrack",
     description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
     skills: [
-      { name: "NextJS"},
-      { name: "Front-End"},
+      { name: "Kanban"},
+      { name: "User Experience"},
+      { name: "Operations"},
+      { name: "Functional Testing"},
     ],
     gitUrl: "https://github.com/gab-cat/merchtrack.git",
     previewUrl: "https://merchtrack.tech/",
-    category: "Web"
+    category: "Project Management"
   },
-  {
-    imgUrl: "/images/project-imgs/MerchTrack.png",
-    title: "MerchTrack",
-    description: "MerchTrack is your solution for efficient merchandise management, simplifying order processing, inventory tracking, and payment handling.",
-    skills: [
-      { name: "Figma Design"},
-      { name: "UI/UX"}
-    ],
-    gitUrl: "https://www.figma.com/design/Z8WqVbn8RrmbfkgpdbpbYe/MerchTrack?node-id=10-6&t=4WyxVyKdDhZzbPrb-1",
-    previewUrl: "",
-    category: "UI/UX"
-  },
-  {
-    imgUrl: "/images/project-imgs/Maharlika-app.jpg",
-    title: "Maharlika",
-    description: "Maharlika is a 2.5D RTS game about a datu on a journey from Borneo to the Philippines, managing resources, and shaping a thriving community.",
-    skills: [
-      { name: "Unreal Engine"},
-      { name: "Jira"}
-    ],
-    gitUrl: "https://gitlab.com/teamc3314927/maharlika",
-    previewUrl: "",
-    category: "Game Development"
-  },
-  {
-    imgUrl: "/images/project-imgs/ProjectSMILE-design.png",
-    title: "Project SMILE",
-    description: "Redesigning the Project SMILE website to improve user experience, update content, and enhance visual appeal.",
-    skills: [
-      { name: "Figma"},
-    ],
-    gitUrl: "https://www.figma.com/design/aMugVSaMthWDCiwMqEvqlB/Project-SMILE-Redesign?node-id=0-1&t=SOKqkXRwhvMXsztD-1",
-    previewUrl: "",
-    category: "UI/UX"
-  },
+  // {
+  //   imgUrl: "/images/project-imgs/ProjectSMILE-design.png",
+  //   title: "Project SMILE",
+  //   description: "Redesigning the Project SMILE website to improve user experience, update content, and enhance visual appeal.",
+  //   skills: [
+  //     { name: "Figma"},
+  //   ],
+  //   gitUrl: "https://www.figma.com/design/aMugVSaMthWDCiwMqEvqlB/Project-SMILE-Redesign?node-id=0-1&t=SOKqkXRwhvMXsztD-1",
+  //   previewUrl: "",
+  //   category: "UI/UX"
+  // },
   {
     imgUrl: "/images/project-imgs/TapUp.png",
     title: "TapUp",
@@ -93,6 +71,44 @@ const projectData = [
     gitUrl: "",
     previewUrl: "https://tapup.tech/",
     category: "Project Management"
+  },
+  {
+    imgUrl: "/images/project-imgs/storymap-image.png",
+    title: "Where the Roots Run Deep",
+    description: "This is a storymap project in which geospatial data and mapping were incorporated to tell the story of the Mangrove Forests in Del Gallego. This project required teamwork, presentation, and data analysis.",
+    skills: [
+      { name: "Data Analysis"},
+      { name: "ArcGIS Tools"},
+      { name: "Spatial Analysis"},
+      {name: "Presentation"},
+    ],
+    gitUrl: "",
+    previewUrl: "https://storymaps.arcgis.com/stories/b2838d632f6c48f4b457634c93d01217",
+    category: "Data"
+  },
+  {
+    imgUrl: "",
+    title: "Data Scientist Track Projects in DataCamp",
+    description: "This is a compilation of the data analysis projects I did in DataCamp using Python. This is an on-going endeavor.",
+    skills: [
+      { name: "Python"},
+      { name: "Data Analysis"}
+    ],
+    gitUrl: "https://github.com/kylaronquillo/Data-Scientist-in-Python-Datacamp",
+    previewUrl: "",
+    category: "Data"
+  },
+  {
+    imgUrl: "/images/project-imgs/Maharlika-app.jpg",
+    title: "Maharlika",
+    description: "Maharlika is a 2.5D RTS game about a datu on a journey from Borneo to the Philippines, managing resources, and shaping a thriving community.",
+    skills: [
+      { name: "Unreal Engine"},
+      { name: "Jira"}
+    ],
+    gitUrl: "https://gitlab.com/teamc3314927/maharlika",
+    previewUrl: "",
+    category: "Game Development"
   },
 ];
 
@@ -117,11 +133,10 @@ const ProjectSection: React.FC = () => {
       <h1 className="text-2xl md:text-4xl font-hagrid font-medium text-black mb-6 text-center">/Projects</h1>
       <div className="flex flex-wrap justify-center">
         <ProjectTag onClick={handleTagChange} tag="All" isSelected={tag === "All"} />
-        <ProjectTag onClick={handleTagChange} tag="Web" isSelected={tag === "Web"} />
-        <ProjectTag onClick={handleTagChange} tag="Game Development" isSelected={tag === "Game Development"} />
+        {/* <ProjectTag onClick={handleTagChange} tag="Web" isSelected={tag === "Web"} /> */}
         <ProjectTag onClick={handleTagChange} tag="Project Management" isSelected={tag === "Project Management"} />
-        <ProjectTag onClick={handleTagChange} tag="Machine Learning" isSelected={tag === "Machine Learning"} />
-        <ProjectTag onClick={handleTagChange} tag="UI/UX" isSelected={tag === "UI/UX"} />
+        <ProjectTag onClick={handleTagChange} tag="Data" isSelected={tag === "Data"} />
+        {/* <ProjectTag onClick={handleTagChange} tag="UI/UX" isSelected={tag === "UI/UX"} /> */}
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-center items-center">
         {projectData

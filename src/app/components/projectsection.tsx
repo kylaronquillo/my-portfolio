@@ -30,7 +30,7 @@ const projectData = [
       { name: "Research"},
       { name: "ClickUp"},
     ],
-    gitUrl: "https://github.com/MaxineNicole2127/prits",
+    gitUrl: "https://drive.google.com/drive/folders/1oyN047CvrkvJcxDRL1wGo5_3_KjpkWMG?usp=drive_link",
     previewUrl: "",
     category: "Project Management"
   },
@@ -44,7 +44,7 @@ const projectData = [
       { name: "Operations"},
       { name: "Functional Testing"},
     ],
-    gitUrl: "https://github.com/gab-cat/merchtrack.git",
+    gitUrl: "https://drive.google.com/file/d/1QrcUlz-VBTIM4k0e5GxilNLSkObFA1aj/view?usp=sharing",
     previewUrl: "https://merchtrack.tech/",
     category: "Project Management"
   },
@@ -109,6 +109,19 @@ const projectData = [
     gitUrl: "https://github.com/kylaronquillo/CSEC302-DataMining/tree/main/Problem%201%20-%20Spam%20Filtering",
     previewUrl: "https://github.com/kylaronquillo/CSEC302-DataMining/blob/main/Problem%201%20-%20Spam%20Filtering/Spam_Filtering%20Documentation.pdf",
     category: "Data Science"
+  },
+  {
+    imgUrl: "/images/project-imgs/cylistic.jpg",
+    title: "Cyclistic BI Project",
+    description: "Created the Stakeholder Requirements, Project Requirements, and Strategy Documents for a Business Intelligence initiative through Google's course, 'Foundations in Business Intelligence.'",
+    skills: [
+      { name: "Business Intelligence"},
+      { name: "Requirements Gathering"},
+      { name: "Documentation"}
+    ],
+    gitUrl: "",
+    previewUrl: "https://drive.google.com/drive/folders/1pKNmnNOE7G2bCZIsdFGAFOkQk7etYQt1?usp=sharing",
+    category: "Project Management"
   },
   {
     imgUrl: "/images/project-imgs/Maharlika-app.jpg",
